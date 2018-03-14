@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="very_small_margin">4dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="normal_margin">16dp</dimen>
+    <dimen name="normal_padding">16dp</dimen>
+    <dimen name="small_padding">8dp</dimen>
+    <dimen name="source_tv_height">60dp</dimen>
+    <dimen name="article_iv_max_height">200dp</dimen>
+    <dimen name="progressbar_dimen">42dp</dimen>
+
+</resources>

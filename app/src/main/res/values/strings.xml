@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">trendy</string>
+
+
+    <!-- json Formatter -->
+    <string name="json_status">status</string>
+    <string name="json_sources">sources</string>
+    <string name="json_sources_id">id</string>
+    <string name="json_source_name">name</string>
+    <string name="json_articles">articles</string>
+    <string name="json_article_author">author</string>
+    <string name="json_article_title">title</string>
+    <string name="json_article_description">description</string>
+    <string name="json_article_url">url</string>
+    <string name="json_article_urlToImage">urlToImage</string>
+    <string name="json_article_publishedAt">publishedAt</string>
+
+
+
+    <string name="no_network_message">No networks available</string>
+    <!-- API Links -->
+
+
+    <string name="api_sources_url">https://newsapi.org/v2/sources</string>
+    <string name="url_apikey_parameter">apiKey</string>
+    <string name="url_apikey_value">60eca4913b644287bddb9fb8697771ca</string>
+    <string name="url_language_parameter">language</string>
+    <string name="url_language_value">en</string>
+
 </resources>
