@@ -24,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
@@ -75,7 +76,10 @@ public class ArticlesFragment extends Fragment implements LoaderManager.LoaderCa
         View rootView = inflater.inflate(R.layout.fragment_articile, container, false);
         ButterKnife.bind(this, rootView);
 
-        //may be add the ads here !! let see with stackoverflow in the future
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        adView.loadAd(adRequest);
+
 
         if(savedInstanceState != null) {
             if(savedInstanceState.containsKey(SOURCE)) {
