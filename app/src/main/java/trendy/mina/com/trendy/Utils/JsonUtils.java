@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import trendy.mina.com.trendy.Model.Article;
 import trendy.mina.com.trendy.Model.Source;
 import trendy.mina.com.trendy.R;
 
@@ -56,6 +57,41 @@ public class JsonUtils {
             e.printStackTrace();
         }
         return sources;
+    }
+
+
+    public static List<Article> extractArticlesFromJson(String jsonResponse, Context context) {
+        ArrayList<Article> articles = new ArrayList<>();
+        try {
+            if (jsonResponse==null || TextUtils.equals(jsonResponse, "")) {
+                return articles;
+            }
+
+            JSONObject rootObject = new JSONObject(jsonResponse);
+            String status = rootObject.getString(context.getString(R.string.json_status));
+
+            if (!STATUS_OK.equals(status)) {
+                FirebaseCrash.logcat(Log.ERROR, TAG, "status!=ok");
+                FirebaseCrash.report(new Exception("Articles Api request status: " + status));
+                return articles;
+            }
+
+            JSONArray articlesJson = rootObject.getJSONArray(context.getString(R.string.json_articles));
+            for (int i=0 ; i<articlesJson.length() ; i++) {
+                JSONObject currentArticle = articlesJson.getJSONObject(i);
+                String author = currentArticle.getString(context.getString(R.string.json_article_author));
+                String title = currentArticle.getString(context.getString(R.string.json_article_title));
+                String description = currentArticle.getString(context.getString(R.string.json_article_description));
+                String url = currentArticle.getString(context.getString(R.string.json_article_url));
+                String imageUrl = currentArticle.getString(context.getString(R.string.json_article_urlToImage));
+                String date = currentArticle.getString(context.getString(R.string.json_article_publishedAt));
+
+                articles.add(new Article(author, title, description, url, imageUrl, date));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return articles;
     }
 
 }

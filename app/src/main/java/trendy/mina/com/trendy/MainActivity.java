@@ -1,6 +1,7 @@
 package trendy.mina.com.trendy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
@@ -126,6 +127,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onClick(int position) {
 
+        Intent articleIntent = new Intent(MainActivity.this, ArticlesActivity.class);
+        articleIntent.putExtra(EXTRA_SOURCE, mSources.get(position));
+        startActivity(articleIntent);
     }
 
 

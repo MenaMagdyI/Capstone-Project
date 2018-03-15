@@ -16,8 +16,11 @@
     <string name="json_article_publishedAt">publishedAt</string>
 
 
-
     <string name="no_network_message">No networks available</string>
+    <string name="images_content_description">article_main_image</string>
+
+
+
     <!-- API Links -->
 
 
@@ -26,5 +29,20 @@
     <string name="url_apikey_value">60eca4913b644287bddb9fb8697771ca</string>
     <string name="url_language_parameter">language</string>
     <string name="url_language_value">en</string>
+
+
+    <string name="api_articles_url">https://newsapi.org/v2/top-headlines</string>
+    <string name="url_source_parameter">sources</string>
+    <string name="url_sortedby_parameter">sortBy</string>
+    <string name="url_sortedby_top">top</string>
+    <string name="url_sortedby_latest">latest</string>
+    <string name="url_sortedby_popular">popular</string>
+
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+
+
+
 
 </resources>

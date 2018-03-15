@@ -59,6 +59,21 @@ public class NetworkUtils {
         return uri.toString();
     }
 
+    public static String buildArticlesUrl(Context context, String sourceId, String sortedBy) {
+        Uri uri = Uri.parse(context.getString(R.string.api_articles_url))
+                .buildUpon()
+                .appendQueryParameter(context.getString(R.string.url_apikey_parameter),
+                        context.getString(R.string.url_apikey_value))
+
+                .appendQueryParameter(context.getString(R.string.url_source_parameter),
+                        sourceId)
+
+                .appendQueryParameter(context.getString(R.string.url_sortedby_parameter),
+                        sortedBy)
+                .build();
+        return uri.toString();
+    }
+
     public static URL getUrl(String urlString) {
         URL url = null;
         try {
@@ -106,7 +121,11 @@ public class NetworkUtils {
     }
 
 
-
+    public static String getArticlesJsonResponse(Context context, String sourceId, String sortedBy) {
+        String articlesUrlString = buildArticlesUrl(context, sourceId, sortedBy);
+        URL articlesUrl = getUrl(articlesUrlString);
+        return getJsonResponse(articlesUrl);
+    }
 
 
 }
