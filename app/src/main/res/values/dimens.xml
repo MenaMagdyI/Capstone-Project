@@ -10,4 +10,8 @@
     <dimen name="article_iv_max_height">200dp</dimen>
     <dimen name="progressbar_dimen">42dp</dimen>
 
+    <dimen name="small_text_size">14sp</dimen>
+    <dimen name="normal_text_size">18sp</dimen>
+
+
 </resources>

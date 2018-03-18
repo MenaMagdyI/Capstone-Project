@@ -122,7 +122,6 @@ public class ArticlesFragment extends Fragment implements LoaderManager.LoaderCa
     private int numberOfColumns() {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        // You can change this divider to adjust the size of the poster
         int widthDivider = 400;
         int width = displayMetrics.widthPixels;
         int nColumns = width / widthDivider;
@@ -193,7 +192,11 @@ public class ArticlesFragment extends Fragment implements LoaderManager.LoaderCa
 
     @Override
     public void onCLick(int position) {
-        //DO some thing !!
+        Article currentArticle = mArticles.get(position);
+        Intent detailIntent = new Intent(getContext(), DetailsActivity.class);
+        detailIntent.putExtra(EXTRA_ARTICLE, currentArticle);
+
+        startActivity(detailIntent);
     }
 
 

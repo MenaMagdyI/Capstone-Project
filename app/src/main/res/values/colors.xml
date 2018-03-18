@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <color name="detail_image_placeholder_color">#e21055</color>
+    <color name="detail_title_highlight_color">#99000000</color>
+    <color name="nastedscroll_background">#ffe5e5e5</color>
 </resources>
