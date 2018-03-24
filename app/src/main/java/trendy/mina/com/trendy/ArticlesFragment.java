@@ -34,6 +34,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import trendy.mina.com.trendy.Model.Article;
 import trendy.mina.com.trendy.Model.Source;
+import trendy.mina.com.trendy.Utils.ContentProviderUtils;
 import trendy.mina.com.trendy.Utils.JsonUtils;
 import trendy.mina.com.trendy.Utils.NetworkUtils;
 import trendy.mina.com.trendy.adapters.ArticlesAdapter;
@@ -147,8 +148,7 @@ public class ArticlesFragment extends Fragment implements LoaderManager.LoaderCa
                 if(isConnected) {
                     return JsonUtils.extractArticlesFromJson(jsonResponse, context);
                 } else {
-                    // will do some get function with content provider in the future
-                    return null;
+                    return ContentProviderUtils.getArticlesFromProvider(getContext(), mSource.getmId(), mSortBy);
                 }
             }
         };
@@ -174,7 +174,7 @@ public class ArticlesFragment extends Fragment implements LoaderManager.LoaderCa
 
                     @Override
                     protected Void doInBackground(Void... voids) {
-                       //will do some insert function with the content provider !
+                        ContentProviderUtils.insertArticlesIntoContentProvider(getContext(), data, mSource.getmId(), mSortBy);
                         return null;
                     }
                 }.execute();
