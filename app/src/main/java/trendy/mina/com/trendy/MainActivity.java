@@ -21,6 +21,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import trendy.mina.com.trendy.Model.Source;
+import trendy.mina.com.trendy.Utils.ContentProviderUtils;
 import trendy.mina.com.trendy.Utils.JsonUtils;
 import trendy.mina.com.trendy.Utils.NetworkUtils;
 import trendy.mina.com.trendy.adapters.SourceAdapter;
@@ -87,15 +88,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                     String jsonResponse = NetworkUtils.getSourcesJsonResponse(context);
                     return JsonUtils.extractSourcesFromJson(jsonResponse, context);
                 } else {
-                   // will return data from provider.
-                    return null;
+                    return ContentProviderUtils.getSourcesFromProvider(MainActivity.this);
                 }
             }
         };
     }
 
     @Override
-    public void onLoadFinished(Loader<List<Source>> loader, List<Source> data) {
+    public void onLoadFinished(Loader<List<Source>> loader, final List<Source> data) {
 
         if(data == null || data.size() == 0) {
             sourcesRecyclerView.setVisibility(View.GONE);
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                       // will insert to provider in the future
+                        ContentProviderUtils.insertSourcesIntoContentProvider(MainActivity.this, data);
                         return null;
                     }
                 }.execute();
