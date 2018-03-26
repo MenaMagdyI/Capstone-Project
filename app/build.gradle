@@ -16,7 +16,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "free"
+    productFlavors{
+        free {
+
+            dimension "free"
+            applicationId "trendy.mina.com.trendy.free"
+        }
+
+        paid {
+
+            applicationId "trendy.mina.com.trendy.paid"
+        }
+    }
 }
+
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

@@ -74,7 +74,7 @@ public class ArticlesFragment extends Fragment implements LoaderManager.LoaderCa
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_articile, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_article, container, false);
         ButterKnife.bind(this, rootView);
 
         AdRequest adRequest = new AdRequest.Builder().build();
