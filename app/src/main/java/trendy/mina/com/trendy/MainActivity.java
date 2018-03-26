@@ -16,6 +16,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.crash.FirebaseCrash;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             isConnected = true;
             getSupportLoaderManager().initLoader(SOURCES_MANAGER_ID, null, this);
         }
+        FirebaseCrash.log("Activity created");
     }
 
     @Override
