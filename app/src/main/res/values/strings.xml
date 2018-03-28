@@ -39,6 +39,15 @@
 
     <string name="appwidget_text">NOT AN OFFICIAL COPY</string>
 
+
+    <string name="empty_articles_list">no articles here !</string>
+    <string name="details_image_contentdesc">article_main_page</string>
+    <string name="place_holder">place holde</string>
+    <string name="Source_URL">Source URL</string>
+    <string name="Empty_sources">NO SOURCES AVIALABLE</string>
+    <string name="Empty_sources_contentdes">NO SOURCES AVIALABLE</string>
+
+
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 
 

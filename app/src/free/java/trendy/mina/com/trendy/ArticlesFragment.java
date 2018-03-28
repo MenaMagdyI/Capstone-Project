@@ -113,6 +113,15 @@ public class ArticlesFragment extends Fragment implements LoaderManager.LoaderCa
         return rootView;
     }
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //https://stackoverflow.com/questions/12640316/further-understanding-setretaininstancetrue
+        setRetainInstance(true);
+    }
+
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putParcelable(SOURCE, mSource);

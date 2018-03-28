@@ -23,7 +23,7 @@
         android:layout_height="@dimen/source_tv_height"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="NO SOURCES AVIALABLE"
-        android:contentDescription="NO SOURCES AVIALABLE"
+        android:text="@string/Empty_sources"
+        android:contentDescription="@string/Empty_sources_contentdes"
         android:visibility="gone" />
 </FrameLayout>
